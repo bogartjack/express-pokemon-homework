@@ -8,7 +8,7 @@ const pokemonController = require('./controllers/pokemons');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 
-app.use('/pokemon/', pokemonController);
+app.use('/pokemon', pokemonController);
 
 app.listen(port, ()=>{
 	console.log('app is listening');
