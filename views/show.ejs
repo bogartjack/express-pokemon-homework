@@ -8,5 +8,8 @@
 	<a href='/pokemon/'>home</a>
 	<h1><%=which.name%></h1>
 	<img src='<%=which.img%>'></img>
+	<form action='/pokemon/<%=index;%>?_method=DELETE' method='POST'>
+		<input type='submit' value='DELETE'>
+	</form>
 </body>
 </html>

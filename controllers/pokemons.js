@@ -7,7 +7,7 @@ router.get('/new', (req, res) =>{
 });
 
 router.get('/:id', (req, res) =>{
-	res.render('show.ejs', {which: Pokemon[req.params.id]});
+	res.render('show.ejs', {which: Pokemon[req.params.id], index: req.params.id});
 });	
 
 router.get('/:id/edit', (req, res) =>{
@@ -27,6 +27,11 @@ router.put('/:id', (req, res) =>{
 router.post('/', (req, res) => {
 	Pokemon.push(req.body);
 	res.redirect('/pokemon/'+(Pokemon.length-1));
+});
+
+router.delete('/:id', (req, res) => {
+	Pokemon.splice(req.params.id, 1);
+	res.redirect('/pokemon/');
 });
 
 module.exports = router;
